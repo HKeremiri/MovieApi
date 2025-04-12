@@ -7,15 +7,51 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{02EA681E-C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnds", "FrontEnds", "{3D250DE5-EB34-4A09-AAC0-EE9C63213186}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Insfrastructure", "Insfrastructure", "{CC17D43A-6986-4FF3-AAB8-79AFA0707C96}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{CC17D43A-6986-4FF3-AAB8-79AFA0707C96}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Requirements", "Requirements", "{8E8D5E73-7198-48A0-9D25-2C6AA20474EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{816B86CE-5647-4777-91D5-9468F1F13ED1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieApi.Domain", "Core\MovieApi.Domain\MovieApi.Domain.csproj", "{646F9DF7-51C9-4DBE-9BCB-87A8EF4A7AE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieApi.Persistence", "Infrastructure\MovieApi.Persistence\MovieApi.Persistence.csproj", "{BC63BAFC-A297-4774-B77C-354317637F67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieApi.WebApi", "Presentation\MovieApi.WebApi\MovieApi.WebApi.csproj", "{05A69638-FB26-4075-87A6-A87CC2468D58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieApi.Application", "Core\MovieApi.Application\MovieApi.Application.csproj", "{20DB1654-97FD-42AC-A6CF-BC2E6B419B1B}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{646F9DF7-51C9-4DBE-9BCB-87A8EF4A7AE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{646F9DF7-51C9-4DBE-9BCB-87A8EF4A7AE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{646F9DF7-51C9-4DBE-9BCB-87A8EF4A7AE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{646F9DF7-51C9-4DBE-9BCB-87A8EF4A7AE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC63BAFC-A297-4774-B77C-354317637F67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC63BAFC-A297-4774-B77C-354317637F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC63BAFC-A297-4774-B77C-354317637F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC63BAFC-A297-4774-B77C-354317637F67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05A69638-FB26-4075-87A6-A87CC2468D58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05A69638-FB26-4075-87A6-A87CC2468D58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05A69638-FB26-4075-87A6-A87CC2468D58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05A69638-FB26-4075-87A6-A87CC2468D58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20DB1654-97FD-42AC-A6CF-BC2E6B419B1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20DB1654-97FD-42AC-A6CF-BC2E6B419B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20DB1654-97FD-42AC-A6CF-BC2E6B419B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20DB1654-97FD-42AC-A6CF-BC2E6B419B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{646F9DF7-51C9-4DBE-9BCB-87A8EF4A7AE2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{BC63BAFC-A297-4774-B77C-354317637F67} = {CC17D43A-6986-4FF3-AAB8-79AFA0707C96}
+		{05A69638-FB26-4075-87A6-A87CC2468D58} = {816B86CE-5647-4777-91D5-9468F1F13ED1}
+		{20DB1654-97FD-42AC-A6CF-BC2E6B419B1B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {797F65A9-F2D7-42A5-B69E-FEEAC94DA3AA}
