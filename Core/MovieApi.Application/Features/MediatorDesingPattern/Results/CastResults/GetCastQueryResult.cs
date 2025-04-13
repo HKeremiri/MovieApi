@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieApi.Domain.Entities
+namespace MovieApi.Application.Features.MediatorDesingPattern.Results.CastResults
 {
-  public  class Cast
+    public class GetCastQueryResult 
     {
         public int CastId { get; set; }
 
