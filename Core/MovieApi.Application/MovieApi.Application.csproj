@@ -15,8 +15,4 @@
     <ProjectReference Include="..\MovieApi.Domain\MovieApi.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\MediatorDesingPattern\Commands\TagCommands\" />
-  </ItemGroup>
-
 </Project>

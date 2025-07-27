@@ -1,10 +1,14 @@
 using MovieApi.Application.Features.CQRSDesingPattern.Handlers.CategoryHandlers;
 using MovieApi.Application.Features.CQRSDesingPattern.Handlers.MovieHandlers;
+using MovieApi.Application.Features.MediatorDesingPattern.Handlers.TagHandlers;
 using MovieApi.Persistence.Context;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+
 builder.Services.AddDbContext<MovieContext>();
 builder.Services.AddScoped<GetCategoryQueryHandler>();
 builder.Services.AddScoped<GetCategoryByIdQueryHandler>();
@@ -17,6 +21,10 @@ builder.Services.AddScoped<GetMovieByIdQueryHandler>();
 builder.Services.AddScoped<CreateMovieCommandHandler>();
 builder.Services.AddScoped<UpdateMovieCommandHandler>();
 builder.Services.AddScoped<RemoveMovieCommandHandler>();
+
+
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetTagQueryHandler).Assembly));
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -37,7 +45,12 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
     });
 }
-
+app.UseCors(x =>
+{
+    x.AllowAnyOrigin();
+    x.AllowAnyHeader();
+    x.AllowAnyMethod();
+});
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
