@@ -1,13 +1,14 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 export default function MovieItem({ movie }) {
+	
 	const formattedDate = new Date(movie.releaseDate).toLocaleDateString();
 
 	return (
 		<div className="movie-item-style-2">
 			<img src={movie.coverImageUrl || "images/uploads/default.jpg"} alt={movie.title} />
 			<div className="mv-item-infor">
-				<h6><a href="moviesingle.html">{movie.title} <span>({movie.createdYear})</span></a></h6>
+				<h6><Link to={`/moviedetail/${movie.movieId}`}>{movie.title} <span>({movie.createdYear})</span></Link></h6>
 				<p className="rate"><i className="ion-android-star"></i><span>{movie.rating}</span> /10</p>
 				<p className="describe">{movie.description}</p>
 				<p className="run-time">

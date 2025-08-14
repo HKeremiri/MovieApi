@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Scripts from './Scripts';
 import LoginPopup from './LoginPopup';
 import SignupPopup from './SignupPopup';
+import { Outlet } from 'react-router-dom';
 export default function Layout({children}) {
     const [loading, setLoading] = useState(true);
 
@@ -14,7 +15,7 @@ export default function Layout({children}) {
         });
 
         // Yedek olarak 2 saniye sonra otomatik kapansýn
-        const timer = setTimeout(() => setLoading(false), 2000);
+        const timer = setTimeout(() => setLoading(false), 250);
 
         return () => {
             clearTimeout(timer);
@@ -32,10 +33,10 @@ export default function Layout({children}) {
                     </div>
                 </div>
             )}
-            <Header />
-            <LoginPopup />
+           <LoginPopup />
             <SignupPopup />
-            {children}
+            <Header />
+            <Outlet/>
             <Footer />
             <Scripts />
         </>

@@ -1,0 +1,121 @@
+.ontv-section {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 8px 12px;
+    color: #fff;
+}
+
+.ontv-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.ontv-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .ontv-title h2 {
+        margin: 0;
+        font-size: 22px;
+    }
+
+.ontv-viewall {
+    color: #999;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.ontv-tab-links {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .ontv-tab-links li {
+    }
+
+        .ontv-tab-links li .ontv-tab-btn {
+            background: transparent;
+            border: 0;
+            color: #bbb;
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .ontv-tab-links li.active .ontv-tab-btn {
+            color: #fff;
+            font-weight: 700;
+            border-bottom: 2px solid #ff6b6b;
+        }
+
+/* Slider card */
+.ontv-slider .slick-slide {
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.ontv-movie-card {
+    background: transparent;
+    text-align: center;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.ontv-movie-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    object-fit: cover;
+    max-height: 280px;
+}
+
+.ontv-movie-body {
+    margin-top: 8px;
+}
+
+    .ontv-movie-body h6 {
+        margin: 6px 0 4px;
+        font-size: 14px;
+    }
+
+.ontv-rating {
+    margin: 0;
+    font-size: 13px;
+    color: #ccc;
+}
+
+.ontv-readmore a {
+    color: #ddd;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+/* responsive spacing */
+@media (max-width: 768px) {
+    .ontv-slider .slick-slide {
+        padding: 0 6px;
+    }
+
+    .ontv-movie-img img {
+        max-height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ontv-tab-links {
+        overflow-x: auto;
+        gap: 6px;
+    }
+
+    .ontv-movie-img img {
+        max-height: 200px;
+    }
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function MovieDetailRate() {
+export default function MovieDetailRate({rating }) {
     const [rate, setRate] = useState(0);        
     const [hoverRate, setHoverRate] = useState(0); 
 
@@ -11,7 +11,7 @@ export default function MovieDetailRate() {
             <div className="rate">
                 <i className="ion-android-star"></i>
                 <p>
-                    <span>8.1</span> /10<br />
+                    <span>{rating}</span> /10<br />
                     <span className="rv">56 Reviews</span>
                 </p>
             </div>

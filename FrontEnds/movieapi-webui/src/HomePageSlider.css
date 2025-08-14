@@ -1,0 +1,20 @@
+.sliderfix {
+    background: url(../images/uploads/slider-bg.jpg) no-repeat center center / cover;
+    position: relative;
+    min-height: 100vh; /* Ekrana tam oturur */
+    padding: 150px 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-attachment: fixed; /* Parallax etkisi */
+}
+
+@media (max-width: 767px) {
+    .sliderfix {
+        min-height: 60vh; /* Çok uzun olmasýn */
+        padding: 100px 15px 30px;
+        background-position: top center; /* Önemli alaný yukarý taþý */
+        background-attachment: scroll; /* Mobilde fixed sorununu önle */
+    }
+}

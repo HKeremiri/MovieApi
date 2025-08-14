@@ -1,8 +1,8 @@
-export default function MovieImageAndWatchTrailer() {
+export default function MovieImageAndWatchTrailer({image }) {
     return (
         <div className="col-md-4 col-sm-12 col-xs-12">
             <div className="movie-img sticky-sb">
-                <img src="images/uploads/movie-single.jpg" alt="" />
+                <img src={image} alt="" />
                 <div className="movie-btn">
                     <div className="btn-transform transform-vertical red">
                         <div>

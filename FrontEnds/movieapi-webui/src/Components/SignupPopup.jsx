@@ -80,8 +80,7 @@ export default function SignupPopup() {
                     <div className="row">
                         <label>
                             Name:
-                            <input
-                                type="text"
+                            <input type="text"
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
@@ -92,8 +91,7 @@ export default function SignupPopup() {
                     <div className="row">
                         <label>
                             Surname:
-                            <input
-                                type="text"
+                            <input type="text"
                                 name="surName"
                                 value={formData.surName}
                                 onChange={handleChange}
@@ -104,8 +102,7 @@ export default function SignupPopup() {
                     <div className="row">
                         <label>
                             Username:
-                            <input
-                                type="text"
+                            <input type="text"
                                 name="userName"
                                 value={formData.userName}
                                 onChange={handleChange}
@@ -116,8 +113,7 @@ export default function SignupPopup() {
                     <div className="row">
                         <label>
                             Email:
-                            <input
-                                type="email"
+                            <input type="email"
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
@@ -128,8 +124,7 @@ export default function SignupPopup() {
                     <div className="row">
                         <label>
                             Password:
-                            <input
-                                type="password"
+                            <input type="password"
                                 name="password"
                                 value={formData.password}
                                 onChange={handleChange}
@@ -140,8 +135,7 @@ export default function SignupPopup() {
                     <div className="row">
                         <label>
                             Confirm Password:
-                            <input
-                                type="password"
+                            <input type="password"
                                 name="confirmPassword"
                                 value={formData.confirmPassword}
                                 onChange={handleChange}
