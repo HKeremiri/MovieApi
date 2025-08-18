@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using MovieApi.Application.Features.CQRSDesingPattern.Commands.UserRegisterCommands;
+using MovieApi.Application.Features.CQRSDesingPattern.Commands.UserCommands;
 using MovieApi.Persistence.Context;
 using MovieApi.Persistence.Identity;
 using System;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieApi.Application.Features.CQRSDesingPattern.Handlers.UserRegisterHandlers
+namespace MovieApi.Application.Features.CQRSDesingPattern.Handlers.UserHandlers
 {
     public class CreateUserRegisterHandler
     {

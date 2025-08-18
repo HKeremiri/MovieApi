@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MovieItem from './MovieItem';
-
-export default function MovieList() {
-	const [movies, setMovies] = useState([]);
+import Pagination from './Pagination';
+export default function MovieList({ movies, setMovies }) {
+	
 	const [sortOption, setSortOption] = useState("popularity_desc");
 	const [currentPage, setCurrentPage] = useState(1);
 	const [moviesPerPage, setMoviesPerPage] = useState(5);
@@ -54,9 +54,7 @@ export default function MovieList() {
 					<option value="rating_asc">Rating Ascending</option>
 					<option value="date_desc">Release Date Descending</option>
 					<option value="date_asc">Release Date Ascending</option>
-				</select>
-				<a href="#" className="list"><i className="ion-ios-list-outline active"></i></a>
-				<a href="#" className="grid"><i className="ion-grid"></i></a>
+				</select>			
 			</div>
 
 			{currentMovies.map((movie, index) => (
@@ -72,34 +70,8 @@ export default function MovieList() {
 					<option value={5}>5 Movies</option>
 					<option value={10}>10 Movies</option>
 				</select>
-
-				<div className="pagination2">
-					<span>Page {currentPage} of {totalPages}:</span>
-					{Array.from({ length: totalPages }, (_, i) => (
-						<a
-							key={i}
-							className={currentPage === i + 1 ? 'active' : ''}
-							href="#"
-							onClick={(e) => {
-								e.preventDefault();
-								setCurrentPage(i + 1);
-							}}
-						>
-							{i + 1}
-						</a>
-					))}
-					{currentPage < totalPages && (
-						<a
-							href="#"
-							onClick={(e) => {
-								e.preventDefault();
-								setCurrentPage(currentPage + 1);
-							}}
-						>
-							<i className="ion-arrow-right-b"></i>
-						</a>
-					)}
-				</div>
+				<Pagination currentPage={currentPage} totalPages={totalPages} setCurrentPage={setCurrentPage} />
+		
 			</div>
 		</div>
 	);

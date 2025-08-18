@@ -1,12 +1,10 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
-using MovieApi.Application.Features.CQRSDesingPattern.Commands.UserLoginCommands;
+using MovieApi.Application.Features.CQRSDesingPattern.Commands.UserCommands;
 using MovieApi.Application.Interfaces;
 using MovieApi.Persistence.Identity;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace MovieApi.Application.Features.CQRSDesingPattern.Handlers.UserLoginHandlers
+namespace MovieApi.Application.Features.CQRSDesingPattern.Handlers.UserHandlers
 {
     public class UserLoginCommandHandler : IRequestHandler<UserLoginCommand, string>
     {

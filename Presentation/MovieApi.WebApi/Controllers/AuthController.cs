@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MovieApi.Application.Features.CQRSDesingPattern.Commands.UserLoginCommands;
+using MovieApi.Application.Features.CQRSDesingPattern.Commands.UserCommands;
 using System.Security.Claims;
 
 namespace MovieApi.WebApi.Controllers

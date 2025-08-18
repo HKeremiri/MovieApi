@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MovieApi.Application.Features.CQRSDesingPattern.Commands.UserRegisterCommands;
-using MovieApi.Application.Features.CQRSDesingPattern.Handlers.UserRegisterHandlers;
+using MovieApi.Application.Features.CQRSDesingPattern.Commands.UserCommands;
+using MovieApi.Application.Features.CQRSDesingPattern.Handlers.UserHandlers;
+
 
 namespace MovieApi.WebApi.Controllers
 {

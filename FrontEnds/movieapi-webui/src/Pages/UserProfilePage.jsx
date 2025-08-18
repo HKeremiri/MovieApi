@@ -1,8 +1,12 @@
 import UserProfileDetails from "../Components/UserProfileDetails";
 import UserProfileChangePassword from "../Components/UserProfileChangePassword";
 import UserProfileAccountDetails from "../Components/UserProfileAccountDetails";
+import { useAuth } from "../Contexts/AuthContext"; 
 export default function UserProfilePage() {
-
+    const { user, loading } = useAuth();
+    console.log(user);
+    if (loading) return <div>Loading...</div>;
+    if (!user) return <div>Please login</div>;
     return (
         <>
            
@@ -11,7 +15,7 @@ export default function UserProfilePage() {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="hero-ct">
-                                    <h1>Edward kennedy’s profile</h1>
+                                <h1>{user.username}’s profile</h1>
                                     <ul className="breadcumb">
                                         <li className="active">
                                             <a href="#">Home</a>
@@ -19,7 +23,7 @@ export default function UserProfilePage() {
                                         <li>
                                             {" "}
                                             <span className="ion-ios-arrow-right" />
-                                            Profile
+                                             My Profile
                                         </li>
                                     </ul>
                                 </div>
@@ -30,10 +34,10 @@ export default function UserProfilePage() {
                 <div className="page-single">
                     <div className="container">
                     <div className="row ipad-width">
-                        <UserProfileAccountDetails />
+                        <UserProfileAccountDetails  />
                             <div className="col-md-9 col-sm-12 col-xs-12">
                             <div className="form-style-1 user-pro" action="#">
-                                <UserProfileDetails/>
+                                <UserProfileDetails user={user} />
                                    
                                 <UserProfileChangePassword/>
                                 </div>

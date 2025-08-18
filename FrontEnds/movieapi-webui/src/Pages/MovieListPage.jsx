@@ -2,9 +2,10 @@ import Hero from "../Components/Hero";
 import MovieList from "../Components/MovieList";
 
 import SearchMovie from "../Components/SearchMovie";
+import { useState } from "react";
 export default function MovieListPage() {
-
-    return (
+    const [movies, setMovies] = useState([]);
+	return (
 		<>
 			<Hero
 				title="Movie List"
@@ -14,15 +15,15 @@ export default function MovieListPage() {
 			<div className="page-single movie_list">
 				<div className="container">
 					<div className="row ipad-width2">
-						<MovieList>
+						<MovieList movies={movies} setMovies={setMovies}>
 
 						</MovieList>
-						<SearchMovie/>
-					
+						<SearchMovie />
+
 					</div>
 				</div>
 			</div>
-        </>
-   
-    )
+		</>
+
+	)
 }

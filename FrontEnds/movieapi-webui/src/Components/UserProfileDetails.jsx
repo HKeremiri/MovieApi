@@ -1,50 +1,26 @@
-export default function UserProfileDetails() {
+export default function UserProfileDetails({ user }) {
+    if (!user) return <p>Loading...</p>;
+
     return (
-     
-        <form action="#" className="user">
+        <form className="user">
             <h4>01. Profile details</h4>
+
             <div className="row">
                 <div className="col-md-6 form-it">
-                    <label>Username</label>
-                    <input type="text" placeholder="edwardkennedy" />
+                    <label>User Name</label>
+                    <input type="text" value={user.userName || ""}  />
                 </div>
                 <div className="col-md-6 form-it">
                     <label>Email Address</label>
-                    <input type="text" placeholder="edward@kennedy.com" />
+                    <input type="text" value={user.email || ""}  />
                 </div>
             </div>
-            <div className="row">
-                <div className="col-md-6 form-it">
-                    <label>First Name</label>
-                    <input type="text" placeholder="Edward " />
-                </div>
-                <div className="col-md-6 form-it">
-                    <label>Last Name</label>
-                    <input type="text" placeholder="Kennedy" />
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-6 form-it">
-                    <label>Country</label>
-                    <select>
-                        <option value="united">United States</option>
-                        <option value="saab">Others</option>
-                    </select>
-                </div>
-                <div className="col-md-6 form-it">
-                    <label>State</label>
-                    <select>
-                        <option value="united">New York</option>
-                        <option value="saab">Others</option>
-                    </select>
-                </div>
-            </div>
+
             <div className="row">
                 <div className="col-md-2">
-                    <input className="submit" type="submit" defaultValue="save" />
+                    <input className="submit" type="submit" value="Save"  />
                 </div>
             </div>
         </form>
-      
     );
 }
