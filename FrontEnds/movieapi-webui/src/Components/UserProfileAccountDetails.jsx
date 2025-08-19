@@ -1,10 +1,12 @@
-export default function UserProfileAccountDetails() {
+import { Link } from 'react-router-dom';
+export default function UserProfileAccountDetails({ imgUrl }) {
+  
     return (
         <div className="col-md-3 col-sm-12 col-xs-12">
             <div className="user-information">
                 <div className="user-img">
                     <a href="#">
-                        <img src="images/uploads/user-img.png" alt="" />
+                        <img src={imgUrl} alt="" />
                         <br />
                     </a>
                     <a href="#" className="redbtn">
@@ -15,13 +17,13 @@ export default function UserProfileAccountDetails() {
                     <p>Account Details</p>
                     <ul>
                         <li className="active">
-                            <a href="userprofile.html">Profile</a>
+                            <Link to="userprofile.html">Profile</Link>
                         </li>
                         <li>
-                            <a href="userfavoritelist.html">Favorite movies</a>
+                            <Link to="userfavoritelist.html">Favorite movies</Link>
                         </li>
                         <li>
-                            <a href="userrate.html">Rated movies</a>
+                            <Link to="userrate.html">Rated movies</Link>
                         </li>
                     </ul>
                 </div>

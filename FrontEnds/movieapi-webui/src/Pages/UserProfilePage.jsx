@@ -34,9 +34,9 @@ export default function UserProfilePage() {
                 <div className="page-single">
                     <div className="container">
                     <div className="row ipad-width">
-                        <UserProfileAccountDetails  />
+                        <UserProfileAccountDetails imgUrl={user.imgUrl } />
                             <div className="col-md-9 col-sm-12 col-xs-12">
-                            <div className="form-style-1 user-pro" action="#">
+                            <div className="form-style-1 user-pro">
                                 <UserProfileDetails user={user} />
                                    
                                 <UserProfileChangePassword/>

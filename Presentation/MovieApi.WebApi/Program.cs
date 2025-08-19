@@ -36,7 +36,7 @@ builder.Services.AddScoped<UserLoginCommandHandler>();
 
 builder.Services.AddScoped<CreateUserRegisterHandler>();
 builder.Services.AddScoped<GetUserWithTokenHandler>();
-
+builder.Services.AddScoped<UpdateUserHandler>();
 
 
 // Identity

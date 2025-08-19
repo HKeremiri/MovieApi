@@ -23,7 +23,7 @@ public class GetUserWithTokenHandler
 
         return new GetUserWithTokenQueryResult
         {
-            Id = user.Id,
+            UserId = user.Id,
             UserName = user.UserName,
             Email = user.Email,
             Name = user.Name,

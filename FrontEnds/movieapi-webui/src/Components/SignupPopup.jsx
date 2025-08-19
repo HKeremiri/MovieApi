@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function SignupPopup() {
+    const { user } = useAuth();
     const [formData, setFormData] = useState({
         name: "",
         surName: "",
@@ -48,7 +50,8 @@ export default function SignupPopup() {
             });
 
             if (!response.ok) {
-                throw new Error("Registration failed");
+                const txt = await response.text().catch(() => "");
+                throw new Error(txt || "Registration failed");
             }
 
             setSuccess(true);
@@ -68,7 +71,11 @@ export default function SignupPopup() {
     };
 
     return (
-        <div className="login-wrapper" id="signup-content">
+        <div
+            className="login-wrapper"
+            id="signup-content"
+            style={{ display: user ? "none" : undefined }}
+        >
             <div className="login-content">
                 <a href="#" className="close">x</a>
                 <h3>Sign Up</h3>

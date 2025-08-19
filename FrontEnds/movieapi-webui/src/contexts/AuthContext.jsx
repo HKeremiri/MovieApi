@@ -1,6 +1,6 @@
 // src/contexts/AuthContext.jsx
 import React, { createContext, useContext, useEffect, useState } from "react";
-import axios from "../api/axiosInstance";
+import instance from "../api/axiosInstance";
 
 const AuthContext = createContext();
 
@@ -13,15 +13,16 @@ export function AuthProvider({ children }) {
         if (!token) return;
         setLoading(true);
         try {
-            const res = await axios.get("/users/myprofile");
+            const res = await instance.get("/users/myprofile");
             setUser(res.data);
         } catch (err) {
             console.error("loadUser error", err);
-            // token geçersizse temizle
             if (err.response?.status === 401) {
                 logout();
             }
-        } finally { setLoading(false); }
+        } finally {
+            setLoading(false);
+        }
     }
 
     useEffect(() => {
@@ -40,8 +41,29 @@ export function AuthProvider({ children }) {
         setUser(null);
     }
 
+    // **Yeni: user güncelleme fonksiyonu**
+    async function updateUser(updatedData) {
+        if (!user) return;
+
+        try {
+            const payload = { userId: user.userId, ...updatedData };
+            const res = await instance.put("/Users", payload);
+
+            if (res.status === 200) {
+                // user state'ini güncelle
+                setUser(payload);
+                return { success: true };
+            } else {
+                return { success: false, message: res.data?.message || "Unknown error" };
+            }
+        } catch (err) {
+            console.error("updateUser error", err);
+            return { success: false, message: err.response?.data?.message || err.message };
+        }
+    }
+
     return (
-        <AuthContext.Provider value={{ token, user, loading, loginWithToken, logout }}>
+        <AuthContext.Provider value={{ token, user, loading, loginWithToken, logout, updateUser }}>
             {children}
         </AuthContext.Provider>
     );
