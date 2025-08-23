@@ -61,9 +61,30 @@ export function AuthProvider({ children }) {
             return { success: false, message: err.response?.data?.message || err.message };
         }
     }
+    async function changePassword({oldPassword, newPassword}) {
+        if (!user) return;
+
+        try {
+            const payload = {
+                userId: user.userId,
+                oldPassword,
+                newPassword
+            };
+            const res = await instance.put("/Users/updatepassword", payload);
+            if (res.status === 200) {
+                return { success: true };
+            } else {
+                return { success: false, message: res.data?.message || "Unknown error" };
+            }
+        }
+        catch (err) {
+            console.error("changePassword error", err);
+            return { success: false, message: err.response?.data?.message || err.message };
+        }
+    } 
 
     return (
-        <AuthContext.Provider value={{ token, user, loading, loginWithToken, logout, updateUser }}>
+        <AuthContext.Provider value={{ token, user, loading, loginWithToken, logout, updateUser, changePassword }}>
             {children}
         </AuthContext.Provider>
     );

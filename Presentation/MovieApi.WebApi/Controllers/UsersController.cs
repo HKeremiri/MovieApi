@@ -15,11 +15,13 @@ namespace MovieApi.WebApi.Controllers
     {
         private readonly GetUserWithTokenHandler _getUserWithTokenHandler;
         private readonly UpdateUserHandler _updateuserhandler;
+        private readonly UpdateUserPasswordHandler _updateUserPasswordHandler;
 
-        public UsersController(GetUserWithTokenHandler getUserWithTokenHandler, UpdateUserHandler updateuserhandler)
+        public UsersController(GetUserWithTokenHandler getUserWithTokenHandler, UpdateUserHandler updateuserhandler, UpdateUserPasswordHandler updateUserPasswordHandler)
         {
             _getUserWithTokenHandler = getUserWithTokenHandler;
             _updateuserhandler = updateuserhandler;
+            _updateUserPasswordHandler = updateUserPasswordHandler;
         }
 
 
@@ -48,5 +50,23 @@ namespace MovieApi.WebApi.Controllers
             await _updateuserhandler.Handler(userCommand);
             return Ok("Kullanıcı Güncellendi");
         }
+
+        [HttpPut("updatepassword")]
+        public async Task<IActionResult> UpdatePassword(UpdateUserPasswordCommand userPasswordCommand)
+        {
+            if (userPasswordCommand == null || string.IsNullOrEmpty(userPasswordCommand.UserId))
+                return BadRequest("Invalid user data.");
+
+            try
+            {
+                await _updateUserPasswordHandler.Handle(userPasswordCommand);
+                return Ok("Şifre Güncellendi");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MovieApi.Application.Features.CQRSDesingPattern.Handlers.CategoryHandlers;
 using MovieApi.Application.Features.CQRSDesingPattern.Handlers.MovieHandlers;
+using MovieApi.Application.Features.CQRSDesingPattern.Handlers.MovieHandlers.FavoriteHandlers;
 using MovieApi.Application.Features.CQRSDesingPattern.Handlers.UserHandlers;
 using MovieApi.Application.Features.MediatorDesingPattern.Handlers.TagHandlers;
 using MovieApi.Application.Interfaces;
@@ -32,12 +33,16 @@ builder.Services.AddScoped<GetMovieByIdQueryHandler>();
 builder.Services.AddScoped<CreateMovieCommandHandler>();
 builder.Services.AddScoped<UpdateMovieCommandHandler>();
 builder.Services.AddScoped<RemoveMovieCommandHandler>();
+builder.Services.AddScoped<AddFavoriteHandler>();
+builder.Services.AddScoped<RemoveFavoriteHandler>();
 builder.Services.AddScoped<UserLoginCommandHandler>();
+builder.Services.AddScoped<GetFavoritesByUserIdQueryHandler>();
+
 
 builder.Services.AddScoped<CreateUserRegisterHandler>();
 builder.Services.AddScoped<GetUserWithTokenHandler>();
 builder.Services.AddScoped<UpdateUserHandler>();
-
+builder.Services.AddScoped<UpdateUserPasswordHandler>();
 
 // Identity
 builder.Services.AddIdentity<AppUser, AppRole>()

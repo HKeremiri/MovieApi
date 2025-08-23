@@ -66,7 +66,7 @@ export default function Header() {
 										Profile <i className="fa fa-angle-down" aria-hidden="true"></i>
 									</Link>
 									<ul className="dropdown-menu level1">
-										<li><Link to="userfavoritemovies">Favorite Movies</Link></li>
+										<li><Link to="/myfavoritemovies">Favorite Movies</Link></li>
 										<li><Link to="userratedmovies">Rated Movies</Link></li>
 									</ul>
 								</li>
@@ -80,7 +80,7 @@ export default function Header() {
 									<li className="btn signupLink"><a href="#">sign up</a></li>
 								</>
 							) : (
-								<li className="logoutLink"><a href="#" onClick={handleLogout}>Logout</a></li>
+								<li className="logoutLink"><a href="/" onClick={handleLogout}>Logout</a></li>
 							)}
 						</ul>
 					</div>

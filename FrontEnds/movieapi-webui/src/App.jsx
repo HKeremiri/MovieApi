@@ -8,7 +8,7 @@ import CelebrityListPage from './Pages/CelebrityListPage';
 import NewsListingPage from './Pages/NewsListingPage';
 import NewsDetailPage from './Pages/NewsDetailPage';
 import UserProfilePage from './Pages/UserProfilePage';
-
+import UserFavoriteMoviesPage from './Pages/UserFavoriteMoviesPage';
 function App() {
 
 
@@ -26,6 +26,7 @@ function App() {
                     <Route path="/news" element={<NewsListingPage />} />
                     <Route path="/newsdetail" element={<NewsDetailPage />} />
                     <Route path="/myprofile" element={<UserProfilePage />} />
+                    <Route path="/myfavoritemovies" element={<UserFavoriteMoviesPage />} />
                 </Route>
 
                 {/* Layout olmadan sayfa */}
